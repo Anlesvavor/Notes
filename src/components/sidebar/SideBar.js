@@ -11,7 +11,7 @@ const SideBar = props => {
       (<SideBarItem key={note.id} note={note} selectNote={props.selectNote} />));
   })();
   return (
-    <div id="side-bar">
+    <div id="side-bar" className="py-4">
       {items}
     </div>
   )

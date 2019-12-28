@@ -7,7 +7,7 @@ const WorkArea = props => {
   const [note, setNote] = useState(props.note);
   useEffect(()=>{
     setNote(props.note);
-  });
+  },[props.note]);
   const handleChange = e => {
     setNote({...note, [e.target.name]: e.target.value});
   }

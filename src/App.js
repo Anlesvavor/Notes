@@ -15,6 +15,7 @@ function App() {
   ];
   const [selectedNote, setSelectedNote] = useState(data[0]);
   const [notes, setNotes] = useState(data);
+  const [increment, setIncrement] = useState(4);
 
   const toggleSideBar = () => {
     document.getElementById('side-bar').classList.toggle("active");
@@ -24,16 +25,17 @@ function App() {
   }
   const save = newNote => {
     console.log(notes);
-    setNotes(notes.filter(note=>note.id !== newNote.id));
-    console.log(notes.filter(note=>note.id !== newNote.id));
-    setNotes([...notes, newNote]);
+    setNotes([...notes.filter(note=>note.id !== newNote.id), newNote].sort((a, b)=> a.id - b.id));
     console.log(notes);
-
+  }
+  const newNote = () => {
+    setIncrement(increment + 1);
+    setNotes([...notes, {id:increment, title:"New Note", text:"add text.."}]);
   }
 
   return (
     <div className="App container-fluid h-100 w-100">
-        <TopBar toggleSideBar={toggleSideBar}/>
+        <TopBar toggleSideBar={toggleSideBar} newNote={newNote}/>
       <div className="wrapper">
         <SideBar notes={notes} selectNote={selectNote}/>
         <WorkArea note={selectedNote} save={save}/>

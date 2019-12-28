@@ -1,11 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import './SideBarItem.css'
+
 const SideBarItem = props => {
   return (
-    <div className="p-4" onClick={props.selectNote.bind(this, props.note.id)}>
-      <div className="p-2"><h4>{props.note.title}</h4></div>
-      <div className="p-2">{props.note.text}</div>
+    <div className="px-4 side-bar-item" onClick={props.selectNote.bind(this, props.note.id)}>
+      <div className="px-2"><h4 className="text-truncate">{props.note.title}</h4></div>
+      <div className="px-2"><p className="text-truncate">{props.note.text}</p></div>
     </div>
   )
 }
