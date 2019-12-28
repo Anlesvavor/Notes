@@ -1,0 +1,29 @@
+#work-area {
+  background-color: #121212;
+  width: 100%;
+}
+
+#work-area textarea {
+  width: 80%;
+  background-color: #121212;
+  border: none;
+  color: #CCC;
+  padding: 30px;
+  margin: 0px 30px;
+  border: none;
+  overflow: auto;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  resize: none;
+}
+
+#title {
+  height: 20%;
+  font-size: 24px;
+}
+
+#sheet {
+  height: 80%;
+}
