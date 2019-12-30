@@ -1,0 +1,10 @@
+/* equivalent to td:not(:first-child) */
+td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+td:first-child {
+  text-align: initial;
+  vertical-align: initial;
+}
